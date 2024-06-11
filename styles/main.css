@@ -55,8 +55,8 @@
     --site-grid-gutter-left-start: 2;
     --site-grid-gutter-left-end: 6;
     --site-grid-content-start: 6;
-    --site-grid-content-end: -3;
-    --site-grid-gutter-right-start: -5;
+    --site-grid-content-end: -4;
+    --site-grid-gutter-right-start: -4;
     --site-grid-gutter-right-end: -2;
   }
 }
@@ -344,8 +344,10 @@ ol {
   margin-right: calc(var(--content-gap) / 2);
   background-image: linear-gradient(
     90deg,
-    var(--border-subtle) 1px,
-    transparent 1px
+    var(--border-subtle) 0.5px,
+    transparent 0.5px,
+    transparent calc(100% - 0.5px),
+    var(--border-subtle) calc(100% - 0.5px)
   );
   background-size: calc(100% / var(--site-grid-column-count)) 100%;
   z-index: 0;
