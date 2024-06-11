@@ -583,8 +583,8 @@ section.home-hero .section-container {
 
 section.home-hero .scroll-anchor {
   grid-column: var(--site-grid-content-start) / var(--site-grid-content-end);
-  grid-row: 2;
-  align-self: end;
+  grid-row: 3;
+  align-self: start;
   hanging-punctuation: none;
 }
 
