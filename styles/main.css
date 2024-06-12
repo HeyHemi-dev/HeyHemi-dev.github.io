@@ -514,11 +514,11 @@ ul.menu li.menu-item:last-child a {
   height: 300%;
   max-height: 30svh;
   pointer-events: none;
-  background: linear-gradient(
+  /*   background: linear-gradient(
     var(--bg-default) 0%,
     transparent 33%,
     transparent 100%
-  );
+  ); */
 }
 
 .header-blur > div {
