@@ -38,10 +38,16 @@
   --text-error: rgb(148, 54, 54);
   --border-bold: rgb(var(--neutral-rgb-1));
   --border-subtle: rgba(var(--neutral-rgb-1), 0.2);
-  /* fonts */
+  /* typography */
   --font-body: 'Noto Sans', sans-serif;
   --font-heading: 'Noto Sans', sans-serif;
   --font-label: 'Chivo Mono', monospace;
+  --font-size-site: clamp(14px, calc(11.333px + 0.6667vw), 18px);
+  --font-size-body: 1rem;
+  --font-size-heading: clamp(0.6rem, 0.28rem + 1.28vw, 1.4rem);
+  --font-size-small: 0.8rem;
+  --font-size-input: clamp(16px, 1rem, 1rem);
+  --typescale-factor: 1.25;
   /* transition */
   --time-snappy: 0.25s;
   --time-slow: 1s;
@@ -124,10 +130,15 @@ a {
 
 /* TYPOGRAPHY --- TYPOGRAPHY --- TYPOGRAPHY --- TYPOGRAPHY --- TYPOGRAPHY --- TYPOGRAPHY --- TYPOGRAPHY */
 
+html {
+  font-size: var(--font-size-site);
+}
+
 .body {
   background-color: var(--bg-default);
   color: var(--text-body);
   font-family: var(--font-body);
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
 }
@@ -145,24 +156,24 @@ a {
 }
 
 .heading-huge {
-  font-size: 5.961rem;
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 8));
   font-weight: 500;
   line-height: 1.1;
 }
 .heading-xlarge {
-  font-size: 3.815rem;
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 6));
 }
 .heading-large {
-  font-size: 3.052rem;
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 5));
 }
 .heading-medium {
-  font-size: 2.441rem;
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 4));
 }
 .heading-small {
-  font-size: 1.953rem;
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 3));
 }
 .heading-xsmall {
-  font-size: 1.563rem;
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 2));
 }
 
 :is(
@@ -191,7 +202,7 @@ a {
 .text-label {
   font-family: var(--font-label);
   font-weight: 500;
-  font-size: 0.8rem;
+  font-size: var(--font-size-small, 0.8rem);
   text-transform: uppercase;
   line-height: 1.2;
 }
@@ -199,7 +210,7 @@ a {
 .text-metadata {
   font-family: var(--font-label);
   font-weight: 200;
-  font-size: 0.8rem;
+  font-size: var(--font-size-small, 0.8rem);
   text-transform: uppercase;
   line-height: 1.2;
 }
@@ -210,8 +221,9 @@ ol {
 }
 
 @media screen and (min-width: 1000px) {
-  .heading-huge {
-    font-size: 9.314rem;
+  .heading-huge,
+  .heading-xlarge,
+  .heading-large {
     font-weight: 500;
     line-height: 1.1;
   }
@@ -405,6 +417,7 @@ ol {
 .site-header {
   font-family: var(--font-label);
   font-weight: 200;
+  font-size: var(--font-size-small);
   text-transform: uppercase;
   padding: var(--site-padding);
   z-index: 1;
@@ -588,15 +601,37 @@ section.home-hero .scroll-anchor {
   hanging-punctuation: none;
 }
 
-/* JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST */
+/* SHOWCASE LIST --- SHOWCASE LIST --- SHOWCASE LIST --- SHOWCASE LIST --- SHOWCASE LIST */
 
-.journal-item-layout {
+.showcase-list-wrapper {
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.showcase-list {
+  grid-column: var(--site-grid-full-width-start) /
+    var(--site-grid-full-width-end);
+  display: grid;
+  grid-template-columns: subgrid;
+  row-gap: 5rem;
+}
+
+.showcase-item {
+  grid-column: var(--site-grid-full-width-start) /
+    var(--site-grid-full-width-end);
+  display: grid;
+  grid-template-columns: subgrid;
+}
+
+.showcase-item-layout {
+  grid-column: var(--site-grid-full-width-start) /
+    var(--site-grid-full-width-end);
   display: grid;
   gap: var(--content-gap);
   grid-template-columns: subgrid;
-  grid-column: var(--site-grid-full-width-start) /
-    var(--site-grid-full-width-end);
 }
+
+/* JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST */
 
 .journal-list-wrapper {
   display: grid;
