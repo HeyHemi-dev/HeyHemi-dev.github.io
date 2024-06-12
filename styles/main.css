@@ -516,7 +516,7 @@ ul.menu li.menu-item:last-child a {
   pointer-events: none;
   background: linear-gradient(
     var(--bg-default) 0%,
-    transparent 50%,
+    transparent 33%,
     transparent 100%
   );
 }
@@ -626,9 +626,67 @@ section.home-hero .scroll-anchor {
 .showcase-item-layout {
   grid-column: var(--site-grid-full-width-start) /
     var(--site-grid-full-width-end);
-  display: grid;
-  gap: var(--content-gap);
-  grid-template-columns: subgrid;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.showcase-item-layout > .showcase-thumbnail {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--text-body);
+  background-image: linear-gradient(
+    120deg,
+    rgba(var(--neutral-rgb-1), 0.2),
+    rgba(var(--neutral-rgb-1), 0)
+  );
+  background-blend-mode: luminosity;
+}
+
+.showcase-thumbnail.ratio-9-16 {
+  aspect-ratio: 9 / 16;
+}
+
+.showcase-thumbnail.ratio-2-3 {
+  aspect-ratio: 2 / 3;
+}
+
+.showcase-thumbnail.ratio-4-5 {
+  aspect-ratio: 4 / 5;
+}
+
+.showcase-thumbnail.ratio-1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.showcase-thumbnail.ratio-5-4 {
+  aspect-ratio: 5 / 4;
+}
+
+.showcase-thumbnail.ratio-3-2 {
+  aspect-ratio: 3 / 2;
+}
+
+.showcase-thumbnail.ratio-16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+#Showcase-Patina-Photo {
+  grid-column: 1 / -1;
+}
+
+#Showcase-Mayday-Weddings {
+  grid-column: 1 / -1;
+}
+
+@media screen and (min-width: 1000px) {
+  #Showcase-Patina-Photo {
+    grid-column: 2 / span 6;
+  }
+
+  #Showcase-Mayday-Weddings {
+    grid-column: span 5 / -4;
+  }
 }
 
 /* JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST --- JOURNAL LIST */
