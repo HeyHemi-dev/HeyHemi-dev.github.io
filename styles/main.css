@@ -9,9 +9,9 @@
   --site-grid-content-end: -3;
   --site-grid-gutter-right-start: -2;
   --site-grid-gutter-right-end: -2;
-  --site-padding: 1rem;
+  --site-padding: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
   --section-padding: min(5rem, 7svh);
-  --content-gap: 1rem;
+  --content-gap: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
   --p-max-width: 65ch;
   --nav-min-height: 5rem;
   /* colours */
@@ -37,10 +37,10 @@
   --text-button: rgb(var(--neutral-rgb-8));
   --text-error: rgb(148, 54, 54);
   --border-bold: rgb(var(--neutral-rgb-1));
-  --border-subtle: rgba(var(--neutral-rgb-1), 0.2);
+  --border-subtle: rgba(var(--neutral-rgb-1), 0.08);
   /* typography */
-  --font-body: 'Noto Sans', sans-serif;
-  --font-heading: 'Noto Sans', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: 'DM Sans', sans-serif;
   --font-label: 'Chivo Mono', monospace;
   --font-size-site: clamp(14px, calc(11.333px + 0.6667vw), 18px);
   --font-size-body: 1rem;
@@ -141,6 +141,7 @@ html {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
+  font-optical-sizing: auto;
 }
 
 .heading-huge,
@@ -155,10 +156,15 @@ html {
   line-height: 1.2;
 }
 
-.heading-huge {
-  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 8));
+.heading-huge,
+.heading-xlarge,
+.heading-large {
   font-weight: 500;
   line-height: 1.1;
+}
+
+.heading-huge {
+  font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 8));
 }
 .heading-xlarge {
   font-size: calc(var(--font-size-heading) * pow(var(--typescale-factor), 6));
@@ -196,7 +202,7 @@ html {
     .heading-xsmall
   )
   + p:not(.padding-top) {
-  padding-top: 1rem;
+  padding-top: calc(var(--content-gap) * 0.5);
 }
 
 .text-label {
@@ -221,12 +227,6 @@ ol {
 }
 
 @media screen and (min-width: 1000px) {
-  .heading-huge,
-  .heading-xlarge,
-  .heading-large {
-    font-weight: 500;
-    line-height: 1.1;
-  }
 }
 
 /* SPACING SYSTEM --- SPACING SYSTEM --- SPACING SYSTEM --- SPACING SYSTEM --- SPACING SYSTEM --- SPACING SYSTEM */
@@ -684,6 +684,10 @@ section.home-hero .scroll-anchor {
     grid-column: 2 / span 6;
   }
 
+  #Showcase-Knowie {
+    grid-column: 10 / span 3;
+  }
+
   #Showcase-Mayday-Weddings {
     grid-column: span 5 / -4;
   }
@@ -727,6 +731,7 @@ section.home-hero .scroll-anchor {
   grid-column: var(--site-grid-gutter-left-start) /
     var(--site-grid-gutter-left-end);
   grid-row: span 3;
+  gap: calc(var(--content-gap) * 0.5);
 }
 
 .journal-item-metadata > p:first-child {
