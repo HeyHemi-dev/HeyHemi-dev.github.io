@@ -203,7 +203,19 @@ html {
     .heading-xsmall
   )
   + p:not(.padding-top) {
-  padding-top: calc(var(--content-gap) * 0.5);
+  padding-top: calc(var(--font-size-body) * 0.5);
+}
+
+p
+  + :is(
+    .heading-huge,
+    .heading-xlarge,
+    .heading-large,
+    .heading-medium,
+    .heading-small,
+    .heading-xsmall
+  ) {
+  padding-top: calc(var(--font-size-heading) * 2.5);
 }
 
 .text-label {
