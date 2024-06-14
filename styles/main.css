@@ -748,6 +748,15 @@ section.home-hero .scroll-anchor {
   row-gap: var(--content-gap);
 }
 
+a.journal-item-excerpt {
+  background-color: transparent;
+  transition: background var(--time-snappy) ease;
+}
+
+a.journal-item-excerpt:hover {
+  background-color: var(--bg-alt);
+}
+
 .journal-item-layout .journal-item-metadata {
   grid-column: var(--site-grid-gutter-left-start) /
     var(--site-grid-gutter-left-end);
