@@ -42,6 +42,7 @@
   --font-body: 'DM Sans', sans-serif;
   --font-heading: 'DM Sans', sans-serif;
   --font-label: 'Chivo Mono', monospace;
+  --font-code: 'Chivo Mono', monospace;
   --font-size-site: clamp(14px, calc(11.333px + 0.6667vw), 18px);
   --font-size-body: 1rem;
   --font-size-heading: clamp(0.6rem, 0.28rem + 1.28vw, 1.4rem);
@@ -224,6 +225,20 @@ html {
 ul,
 ol {
   margin-left: calc(1em + var(--content-gap));
+}
+
+code {
+  font-family: var(--font-code);
+  font-size: var(--font-size-small);
+  background-color: var(--bg-alt);
+  padding: 0.12em;
+}
+
+pre {
+  font-family: var(--font-code);
+  font-size: var(--font-size-small);
+  background-color: var(--bg-alt);
+  padding-block: var(--content-gap);
 }
 
 @media screen and (min-width: 1000px) {
@@ -725,6 +740,12 @@ section.home-hero .scroll-anchor {
 
 .journal-item-layout > * {
   grid-column: var(--site-grid-content-start) / var(--site-grid-content-end);
+}
+
+.journal-item-excerpt {
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--content-gap);
 }
 
 .journal-item-layout .journal-item-metadata {
