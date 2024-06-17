@@ -318,6 +318,7 @@ pre {
     auto
     minmax(5rem, max-content);
   height: 100%;
+  overflow-x: hidden;
 }
 
 .header {
