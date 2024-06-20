@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript and the DOM: A Beginner's Guide</title>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body class="body">
+    <div class="page">
+      <header class="header">
+        <div class="site-header">
+          <div class="site-brand">
+            <a href="/" class="logo">HeyHemi</a>
+          </div>
+          <nav class="site-nav">
+            <ul class="menu wrapper">
+              <li class="menu-item"><a href="#">About</a></li>
+              <li class="menu-item"><a href="#featured-work">Work</a></li>
+              <li class="menu-item"><a href="/blog">Journal</a></li>
+            </ul>
+          </nav>
+          <div class="site-cta">
+            <a href="#" class="site-cta-button">Say Hi</a>
+          </div>
+        </div>
+        <div class="header-blur">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </header>
+      <main class="content">
+        <section class="section">
+          <div class="section-container">
+            <!-- ARTICLE CONTENT START -->
+            <div class="wrapper">
+              <h1 class="heading-xlarge">
+                JavaScript and the DOM: A Beginner's Guide
+              </h1>
+              <p>
+                JavaScript is the engine that brings web pages to life, adding
+                functionality and interactivity to the static structures created
+                with HTML and CSS. Today, I'm exploring some fundamental
+                concepts in JavaScript, including control flow and loops, how to
+                interact with the DOM (Document Object Model), and the
+                differences between arrays and objects. I'll also touch on the
+                power of functions to make your code more efficient and
+                reusable. Whether you're just starting out or looking to
+                solidify your understanding, this guide aims to make these core
+                ideas approachable and relatable.
+              </p>
+              <h2 class="heading-small">
+                JavaScript and its Relationship to HTML and CSS
+              </h2>
+              <p>
+                If HTML is the structure, and CSS is the styling; then,
+                JavaScript is the logic — it makes everything work. Want a quote
+                to be generated when you click a button? JavaScript. Want to
+                pull data on page load? JavaScript. It’s the dynamic element
+                that brings your web pages to life, handling everything from
+                simple tasks to complex interactions. By integrating JavaScript
+                with HTML and CSS, you can build responsive, engaging, and
+                user-friendly web applications.
+              </p>
+              <h2 class="heading-small">Control Flow and Loops</h2>
+              <p>
+                From my background in photography, loops remind me a lot of
+                editing a big batch of photos; load photo, +5 temp, -2 exposure,
+                next photo. Repeat until all the photos are edited. In
+                programming, control flow and loops allow us to repeat actions
+                and make decisions in our code.
+              </p>
+              <h2 class="heading-small">
+                The DOM and How You Interact with It
+              </h2>
+              <p>
+                The DOM (Document Object Model) is a collection (similar to an
+                array) of all the elements on a webpage. It’s a giant tree of
+                nodes, every paragraph, heading, button, and div on the page.
+                You can interact with it in JavaScript by calling the
+                <code>document</code> object, like
+                <code>document.querySelector</code>.
+              </p>
+              <h2 class="heading-small">
+                Accessing Data from Arrays vs. Objects
+              </h2>
+              <p>
+                Arrays and objects have a lot of similarities; most
+                significantly, they are both used to store multiple values in
+                one property.
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    An array is pretty simple; it is a list of values grouped
+                    with square brackets and separated with commas. e.g.,
+                    <code>people = ['hemi', 'joseph', 'gerard']</code>.
+                  </p>
+                  <p>
+                    Each item has an index; a secret number assigned to it based
+                    on its order in the array — a bit of a quirk, these numbers
+                    start from 0. e.g., in the people array from before,
+                    <code>'hemi'</code> is 0, <code>'joseph'</code> is 1, etc.
+                    You can get the item you want from the array by writing the
+                    array name and the index you want in square brackets e.g.,
+                    <code>people[0]</code> would be <code>'hemi'</code>.
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    An object is also a list of values, except each value is
+                    actually a key-value pair, which allows for easy storing and
+                    parsing of diverse information. e.g.,
+                  </p>
+                  <pre><code>
+                    hemi = { 
+                      favoriteColor: 'blue', 
+                      favoriteNumber: 12, 
+                      isCool: true 
+                    }
+                  </code></pre>
+                  <p>
+                    You can access data by calling the key with dot notation
+                    e.g., <code>hemi.favoriteNumber</code>. Because each value
+                    has a key, instead of just an index number, it gives you a
+                    clue about the type of data you can expect to find; in this
+                    case, <code>hemi.favoriteNumber</code> is an integer with a
+                    value <code>12</code>.
+                  </p>
+                </li>
+              </ul>
+              <h2 class="heading-small">
+                What Are Functions and Why Are They Helpful
+              </h2>
+              <p>
+                Functions are a way to bundle and compartmentalize an action or
+                series of actions. This is incredibly useful because it makes it
+                possible to define these actions and then refer back to them
+                again and again in the future.
+              </p>
+              <p>
+                This is also a bit similar to editing photos. Let’s say you want
+                to crop a photo, rotate it 90 degrees, and then export it to
+                your desktop. You could do each of these steps for every photo
+                individually, or you could bundle these actions together into a
+                function called <code>standardEdit</code> ready to run on any
+                photo you want.
+              </p>
+              <p>
+                Whether you add all these actions to one function, or whether
+                you want to split them up into separate functions (maybe you
+                don’t want to crop <em>every</em> photo), is your choice and
+                will make sense to your specific situation.
+              </p>
+              <h2 class="heading-small">Wrapping Up</h2>
+              <p>
+                Understanding these core JavaScript concepts — control flow and
+                loops, interacting with the DOM, accessing data from arrays and
+                objects, and using functions — is essential for making your web
+                pages dynamic and interactive. Keep practicing these ideas, and
+                you'll soon find yourself more comfortable and confident in your
+                coding journey. Remember, everyone starts somewhere, and it's
+                all about building your knowledge step by step. Happy coding!
+              </p>
+            </div>
+
+            <!-- ARTICLE CONTENT END -->
+          </div>
+        </section>
+      </main>
+      <footer class="footer"></footer>
+      <div class="page-grid-background"></div>
+    </div>
+  </body>
+</html>
