@@ -6,8 +6,6 @@ function html(strings, ...values) {
 }
 
 function appendHead() {
-  const metaCharacterSet = `<meta charset="UTF-8">`
-  const metaViewport = `<meta name="viewport" content="width=device-width">`
   const styleMain = `<link href="/styles/main.css" rel="stylesheet" type="text/css">`
   const fontsGoogle = `
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,10 +13,7 @@ function appendHead() {
     <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
     `
 
-  document.head.insertAdjacentHTML(
-    'beforeend',
-    metaCharacterSet + metaViewport + styleMain + fontsGoogle
-  )
+  document.head.insertAdjacentHTML('beforeend', styleMain + fontsGoogle)
   console.log('head appended')
 }
 
