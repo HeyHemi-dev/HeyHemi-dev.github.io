@@ -24,7 +24,7 @@ function renderHeader(insertElement) {
       </div>
       <nav class="site-nav">
         <ul class="menu wrapper">
-          <li class="menu-item"><a href="#">About</a></li>
+          <li class="menu-item"><a href="/about">About</a></li>
           <li class="menu-item"><a href="/#featured-work">Work</a></li>
           <li class="menu-item"><a href="/#recent-journal">Journal</a></li>
         </ul>
