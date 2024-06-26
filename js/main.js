@@ -5,6 +5,23 @@ function html(strings, ...values) {
   return strings.raw[0]
 }
 
+function appendHead() {
+  const metaCharacterSet = `<meta charset="UTF-8">`
+  const metaViewport = `<meta name="viewport" content="width=device-width">`
+  const styleMain = `<link href="/styles/main.css" rel="stylesheet" type="text/css">`
+  const fontsGoogle = `
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&amp;family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap" rel="stylesheet">
+    `
+
+  document.head.insertAdjacentHTML(
+    'beforeend',
+    metaCharacterSet + metaViewport + styleMain + fontsGoogle
+  )
+  console.log('head appended')
+}
+
 function renderHeader(insertElement) {
   const headerHTML = html` <div class="site-header">
       <div class="site-brand">
@@ -32,9 +49,17 @@ function renderHeader(insertElement) {
       <div></div>
     </div>`
   document.querySelector(insertElement).innerHTML = headerHTML
-  console.log('header loaded')
+  console.log('site header loaded')
+}
+
+function renderFooter(insertElement) {
+  const footerHTML = html`<div class="site-footer"></div>`
+  document.querySelector(insertElement).innerHTML = footerHTML
+  console.log('site footer loaded')
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  appendHead()
   renderHeader('header')
+  renderFooter('footer')
 })
