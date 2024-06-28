@@ -202,11 +202,11 @@ html {
     .heading-small,
     .heading-xsmall
   )
-  + p:not(.padding-top) {
+  + :is(p, ul, ol, blockquote, img, pre, code):not(.padding-top) {
   padding-top: calc(var(--font-size-body) * 0.5);
 }
 
-p
+:is(p, ul, ol, blockquote, img, pre, code)
   + :is(
     .heading-huge,
     .heading-xlarge,
@@ -773,7 +773,7 @@ a.journal-item-excerpt:hover {
 .journal-item-layout .journal-item-metadata {
   grid-column: var(--site-grid-gutter-left-start) /
     var(--site-grid-gutter-left-end);
-  grid-row: span 3;
+  /*grid-row: span 3;*/
   gap: calc(var(--content-gap) * 0.5);
 }
 
