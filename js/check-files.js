@@ -12,10 +12,28 @@
 // - Add steps here...
 // Create trigger for function
 
-function checkForFiles(filePath) {
-  let fs = require('fs')
-  let blogFiles = fs.readdirSync(filePath)
-  console.log(blogFiles)
+function checkForFiles(directoryPath, fileType) {
+  //directoryPath is relative to this JS file
+  //fileType should not include the '.'
+
+  //Get a readout of everything in the directoryPath
+  const fs = require('fs')
+  let filesAll = fs.readdirSync(directoryPath)
+  //console.log(filesAll)
+
+  //Make sure file names are all lower-case for consistency
+  filesAll = filesAll.map((file) => file.toLowerCase())
+
+  //Filter only the files that match the file type
+  const regex = new RegExp(`\\.${fileType}$`)
+  let filesOfType = filesAll.filter((file) => regex.test(file))
+  //console.log(filesOfType)
+
+  //Replace the file extension to get a clean file name
+  filesOfType = filesOfType.map((file) => file.replace(regex, ''))
+
+  console.log(filesOfType)
+  return filesOfType
 }
 
-checkForFiles('/blog')
+checkForFiles('../blog', 'html')
