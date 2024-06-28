@@ -202,11 +202,30 @@ html {
     .heading-small,
     .heading-xsmall
   )
-  + :is(p, ul, ol, blockquote, img, pre, code):not(.padding-top) {
+  + :is(p, ul, ol, blockquote, pre, code, img, picture, svg, video):not(
+    .padding-top
+  ) {
   padding-top: calc(var(--font-size-body) * 0.5);
 }
 
-:is(p, ul, ol, blockquote, img, pre, code)
+:is(
+    p,
+    ul,
+    ol,
+    blockquote,
+    pre,
+    code,
+    img,
+    picture,
+    svg,
+    video,
+    .heading-huge,
+    .heading-xlarge,
+    .heading-large,
+    .heading-medium,
+    .heading-small,
+    .heading-xsmall
+  )
   + :is(
     .heading-huge,
     .heading-xlarge,
@@ -214,7 +233,7 @@ html {
     .heading-medium,
     .heading-small,
     .heading-xsmall
-  ) {
+  ):not(.padding-top) {
   padding-top: calc(var(--font-size-heading) * 2.5);
 }
 
