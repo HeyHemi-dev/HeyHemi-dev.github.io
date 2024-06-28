@@ -255,6 +255,8 @@ html {
 
 ul,
 ol {
+  display: grid;
+  gap: var(--content-gap);
   margin-left: calc(1em + var(--content-gap));
 }
 
@@ -270,6 +272,10 @@ pre {
   font-size: var(--font-size-small);
   background-color: var(--bg-alt);
   padding-block: var(--content-gap);
+}
+
+strong {
+  font-weight: bolder;
 }
 
 @media screen and (min-width: 1000px) {
